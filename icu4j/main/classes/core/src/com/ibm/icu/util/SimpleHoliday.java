@@ -53,6 +53,8 @@ public class SimpleHoliday extends Holiday {
      *              If the name is not found in the resource bundle,
      *              getDisplayName will return this string instead.
      *
+     * @param startYear     The year in which this holiday occurs for the first time
+     *
      * @see Holiday#getDisplayName(java.util.Locale)
      * @draft ICU 2.8
      * @provisional This API might change or be removed in a future release.
@@ -73,6 +75,9 @@ public class SimpleHoliday extends Holiday {
      *              to look up the holiday's name a resource bundle.
      *              If the name is not found in the resource bundle,
      *              getDisplayName will return this string instead.
+     *
+     * @param startYear     The year in which this holiday occurs for the first time
+     * @param endYear       The year in which this holiday occurs for the last time
      *
      * @see Holiday#getDisplayName(java.util.Locale)
      * @draft ICU 2.8
@@ -117,6 +122,7 @@ public class SimpleHoliday extends Holiday {
     }
 
     /**
+     * @param startYear     The year in which this holiday occurs for the first time
      * @draft ICU 2.8
      * @provisional This API might change or be removed in a future release.
      */
@@ -131,6 +137,8 @@ public class SimpleHoliday extends Holiday {
 
 
     /**
+     * @param startYear     The year in which this holiday occurs for the first time
+     * @param endYear       The year in which this holiday occurs for the last time
      * @draft ICU 2.8
      * @provisional This API might change or be removed in a future release.
      */
@@ -165,8 +173,7 @@ public class SimpleHoliday extends Holiday {
         return rangeRule;
     }
 
-    /* Constants for holidays that are common throughout the Western
-     * and Christian worlds.... */
+    /* Constants for holidays that are common throughout the Western world */
 
     /**
      * New Year's Day - January 1st
@@ -177,20 +184,30 @@ public class SimpleHoliday extends Holiday {
         new SimpleHoliday(Calendar.JANUARY,    1,  "New Year's Day");
 
     /**
-     * Epiphany, January 6th
-     * @draft ICU 2.8
-     * @provisional This API might change or be removed in a future release.
-     */
-    public static final SimpleHoliday EPIPHANY =
-        new SimpleHoliday(Calendar.JANUARY,    6,  "Epiphany");
-
-    /**
      * May Day, May 1st
      * @draft ICU 2.8
      * @provisional This API might change or be removed in a future release.
      */
     public static final SimpleHoliday MAY_DAY =
         new SimpleHoliday(Calendar.MAY,        1,  "May Day");
+
+    /**
+     * New Year's Eve, December 31st
+     * @draft ICU 2.8
+     * @provisional This API might change or be removed in a future release.
+     */
+    public static final SimpleHoliday NEW_YEARS_EVE =
+        new SimpleHoliday(Calendar.DECEMBER,  31,  "New Year's Eve");
+
+    /* Constants for holidays that are common throughout Christianity */
+
+    /**
+     * Epiphany, January 6th
+     * @draft ICU 2.8
+     * @provisional This API might change or be removed in a future release.
+     */
+    public static final SimpleHoliday EPIPHANY =
+        new SimpleHoliday(Calendar.JANUARY,    6,  "Epiphany");
 
     /**
      * Assumption, August 15th
@@ -255,13 +272,5 @@ public class SimpleHoliday extends Holiday {
      */
     public static final SimpleHoliday ST_STEPHENS_DAY =
         new SimpleHoliday(Calendar.DECEMBER,  26,  "St. Stephen's Day");
-
-    /**
-     * New Year's Eve, December 31st
-     * @draft ICU 2.8
-     * @provisional This API might change or be removed in a future release.
-     */
-    public static final SimpleHoliday NEW_YEARS_EVE =
-        new SimpleHoliday(Calendar.DECEMBER,  31,  "New Year's Eve");
 
 }
